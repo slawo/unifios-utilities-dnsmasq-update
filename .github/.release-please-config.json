@@ -1,0 +1,71 @@
+{
+  "release-type": "simple",
+  "initial-version": "0.0.1",
+  "pull-request-title-pattern": "chore: release v${version}",
+  "changelog-sections": [
+    {
+      "type": "feat",
+      "section": "✨ New Features",
+      "hidden": false
+    },
+    {
+      "type": "feature",
+      "section": "✨ New Features"
+    },
+    {
+      "type": "fix",
+      "section": "🐛 Bug Fixes"
+    },
+    {
+      "type": "perf",
+      "section": "🚀 Performance Improvements"
+    },
+    {
+      "type": "refactor",
+      "section": "🔄 Code Refactoring",
+      "hidden": false
+    },
+    {
+      "type": "style",
+      "section": "🎨 Styling",
+      "hidden": false
+    },
+    {
+      "type": "deps",
+      "section": "📦 Dependencies"
+    },
+    {
+      "type": "test",
+      "hidden": true,
+      "section": "🧪 Tests"
+    },
+    {
+      "type": "docs",
+      "section": "📚 Documentation",
+      "hidden": false
+    },
+    {
+      "type": "revert",
+      "section": "🔙 Reverts"
+    },
+    {
+      "type": "chore",
+      "section": "🧹 Chores",
+      "hidden": true
+    },
+    {
+      "type": "ci",
+      "section": "🚦 CI",
+      "hidden": false
+    },
+    {
+      "type": "build",
+      "section": "🛠️ Build",
+      "hidden": true
+    }
+  ],
+  "packages": {
+    ".": {}
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
