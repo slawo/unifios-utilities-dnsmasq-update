@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.0.0...v1.1.0) (2025-07-27)
+
+
+### ✨ New Features
+
+* add an install script ([6aa2d3a](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/6aa2d3afb762c974b034ffa3ebb6cdf136f551f0))
+
+
+### 📚 Documentation
+
+* remove ambiguity in the intro about input file ([c0ee71a](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/c0ee71a3036e37ad3164676c3aa4a8505153f120))
+
+
+### 🚦 CI
+
+* add doc singular as a vaild documentation section ([1d86dcd](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/1d86dcda81b3cd08e43a61a6caf40daabe4ee819))
+
 ## [1.0.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v0.0.1...v1.0.0) (2025-07-27)
 
 
