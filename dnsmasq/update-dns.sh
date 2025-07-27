@@ -52,9 +52,9 @@ while IFS= read -r line; do
 	! grep -Fxq "$line" "$DNSMASQ_CONF_TO_PATCH" && NEED_UPDATE=true
 done <<< "$filtered_patch"
 
-if grep -Fxq "#start_shared" "$DNSMASQ_CONF_TO_PATCH" && grep -Fxq "#end_shared" "$DNSMASQ_CONF_TO_PATCH"; then
-	echo `awk '/^#start_shared$/,/^#end_shared$/' "$DNSMASQ_CONF_TO_PATCH" `
-	between_block=$(awk '/^#start_shared$/,/^#end_shared$/' "$DNSMASQ_CONF_TO_PATCH" | grep -v '^#start_shared$' | grep -v '^#end_shared$')
+if grep -Fxq "#start_patched" "$DNSMASQ_CONF_TO_PATCH" && grep -Fxq "#end_patched" "$DNSMASQ_CONF_TO_PATCH"; then
+	echo `awk '/^#start_patched$/,/^#end_patched$/' "$DNSMASQ_CONF_TO_PATCH" `
+	between_block=$(awk '/^#start_patched$/,/^#end_patched$/' "$DNSMASQ_CONF_TO_PATCH" | grep -v '^#start_patched$' | grep -v '^#end_patched$')
 	# Check if any line in between_block is not in filtered_patch
 	# If so, we need to update to remove the lines that are not longer needed.
 	while IFS= read -r line; do
@@ -67,8 +67,8 @@ fi
 if $NEED_UPDATE; then
 	echo "Update required."
 	[[ $(tail -c1 "$DNSMASQ_CONF_TO_PATCH" | wc -l) -eq 0 ]] && echo "" >> "$DNSMASQ_CONF_TO_PATCH"
-	grep -Fxq "#start_shared" "$DNSMASQ_CONF_TO_PATCH" || echo "#start_shared" >> "$DNSMASQ_CONF_TO_PATCH"
-	grep -Fxq "#end_shared" "$DNSMASQ_CONF_TO_PATCH"   || echo "#end_shared" >> "$DNSMASQ_CONF_TO_PATCH"
+	grep -Fxq "#start_patched" "$DNSMASQ_CONF_TO_PATCH" || echo "#start_patched" >> "$DNSMASQ_CONF_TO_PATCH"
+	grep -Fxq "#end_patched" "$DNSMASQ_CONF_TO_PATCH"   || echo "#end_patched" >> "$DNSMASQ_CONF_TO_PATCH"
 
 	new_block=""
 	while IFS= read -r line; do
@@ -90,12 +90,12 @@ if $NEED_UPDATE; then
 	output=""
 	inside_block=false
 	while IFS= read -r line; do
-		if [[ "$line" == "#start_shared" ]]; then
+		if [[ "$line" == "#start_patched" ]]; then
 			output+="$line"$'\n'
 			inside_block=true
 			output+="$new_block"
 			continue
-		elif [[ "$line" == "#end_shared" ]]; then
+		elif [[ "$line" == "#end_patched" ]]; then
 			inside_block=false
 			output+="$line"$'\n'
 			continue
