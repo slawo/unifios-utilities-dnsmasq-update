@@ -1,6 +1,6 @@
 # unifios-utilities-dnsmasq-update
 
-This is a script which updatates dnsmasq on unifi os with the values provided in the `shared.conf` file inside the `dnsmasq/patch` folder.
+This is a script which updatates dnsmasq on unifi os with the values provided by the `shared.conf` file inside the script's `patch` folder.
 
 ## Prereqisits
 
