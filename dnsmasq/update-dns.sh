@@ -13,6 +13,11 @@ case "$(ubnt-device-info firmware || true)" in
 	;;
 esac
 
+lockfile="/var/run/lock/slawo-update-dns.lock"
+
+(
+if ! flock -n 100; then exit 1; fi
+
 if [ -d /run/dnsmasq.dns.conf.d ]; then
 	DNSMASQ_CONF_PATH="/run/dnsmasq.dns.conf.d"
 	DNSMASQ_CONF_WAIT="$DNSMASQ_CONF_PATH/main.conf"
@@ -107,3 +112,4 @@ if $NEED_UPDATE; then
 else
 	echo "No update needed."
 fi
+) 100>"$lockfile" || exit 1
