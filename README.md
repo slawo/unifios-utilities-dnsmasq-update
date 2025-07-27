@@ -8,6 +8,16 @@ While this script can be run standalone, the default installer relies on [on-boo
 
 ## Installation
 
+### Auto install
+
+I provide an install script for a convenient one line installation:
+
+```bash
+curl -fsL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/installer/remote-install.sh" | /bin/bash
+```
+
+### Manual install
+
 To install the script simply copy `init-dnsmasq-update.sh` and `update-dns.sh` to your console's `/data/dnsmasq` folder and run `init-dnsmasq-update.sh`.
 
 If you are using on-boot script then also add the `init-dnsmasq-update.sh` to the `on-boot.d` directory to ensure it will keep running despite reboots and firmware updates:
