@@ -22,7 +22,7 @@ In order to patch the dnsmasq configuration on your unifi router you need to pro
 
 For example:
 
-```toml
+```dnsmasq
 host-record=unifi.koln.example.com,192.168.20.1
 host-record=unifi.paris.example.com,192.168.90.1
 server=/*.koln.example.com/192.168.20.1
@@ -31,6 +31,6 @@ server=/*.paris.example.com/192.168.90.1
 
 You can also provide additional files as long as they start with `shared` and end with `.conf`, for example `/data/dnsmasq/patch/shared-tailscale.conf`:
 
-```toml
+```dnsmasq
 interface=tailscale*
 ```
