@@ -13,7 +13,7 @@ While this script can be run standalone, the default installer relies on [on-boo
 I provide an install script for a convenient one line installation:
 
 ```bash
-curl -fsL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/installer/remote-install.sh" | /bin/bash
+curl -fsL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/remote-install.sh" | /bin/bash
 ```
 
 ### Manual install
