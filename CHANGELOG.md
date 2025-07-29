@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.1.1...v1.2.0) (2025-07-29)
+
+
+### ✨ New Features
+
+* execute init script during install ([aae2ad5](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/aae2ad591f1e85f776a4180d31c13bf64b9444b0))
+
+
+### 🐛 Bug Fixes
+
+* add executable flag to sh scripts ([08b380b](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/08b380b2e0bae37734dcbe0d35c61a4a91872fbb))
+
+
+### 📚 Documentation
+
+* fix installer path ([fab821a](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/fab821a30063c8471c4122f34486e41d2192b9f8))
+
 ## [1.1.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.1.0...v1.1.1) (2025-07-29)
 
 
