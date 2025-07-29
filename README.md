@@ -1,10 +1,10 @@
 # unifios-utilities-dnsmasq-update
 
-This is a script which updatates dnsmasq on unifi os with the values provided by the `shared.conf` file inside the script's `patch` folder.
+This is a script which updates dnsmasq configuration on on unifios devices with custom options which are not available in the GUI. It takes the values you provide in the `shared.conf` file inside the script's `patch` folder.
 
-## Prereqisits
+## Prerequisites
 
-While this script can be run standalone, the default installer relies on [on-boot script](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script) to keep it active after reboots and firmware updates. You should install on-boot script first.
+While this script can be run standalone, the default installer relies on [on-boot script](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script) to keep it active after reboots and firmware updates. You should install on-boot script first if you want to be sure this script will not be disabled after reboots and firmware updates.
 
 ## Installation
 
