@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.1.0...v1.1.1) (2025-07-29)
+
+
+### 🐛 Bug Fixes
+
+* rename install-remote.sh to remote-install.sh ([2ddd3eb](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/2ddd3eb60f4e70f3bb969b16334e0fc70eb07c0a))
+
 ## [1.1.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.0.0...v1.1.0) (2025-07-27)
 
 
