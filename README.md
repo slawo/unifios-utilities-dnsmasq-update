@@ -26,7 +26,7 @@ If you are using on-boot script then also add the `init-dnsmasq-update.sh` to th
 ln -sf "/data/dnsmasq/init-dnsmasq-update.sh" "/data/11-init-dnsmasq-updates.sh"
 ```
 
-## Setup
+## Usage
 
 In order to patch the dnsmasq configuration on your unifi router you need to provide a file in `/data/dnsmasq/patch/shared.conf`.
 
@@ -44,3 +44,10 @@ You can also provide additional files as long as they start with `shared` and en
 ```dnsmasq
 interface=tailscale*
 ```
+
+## Compatibility
+I have been using variations of this script since UDM 2.x days and I have kept the paths to the previous dnsmasq conf files for compatibility reasons
+This script has been thougly tested on UDM pro and SE consoles. If you install it on any other console open an issue for feedback and let me know which console you are runing it on.
+
+Happy days!
+
