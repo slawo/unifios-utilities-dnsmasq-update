@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.2.0...v1.2.1) (2025-08-01)
+
+
+### 📚 Documentation
+
+* fix typos and add clarification about the script and the on-boot script requirements ([3f5d6d6](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/3f5d6d62648b071fc9251ab3369327ddb7eefb56))
+
 ## [1.2.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.1.1...v1.2.0) (2025-07-29)
 
 
