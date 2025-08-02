@@ -2,6 +2,10 @@
 
 This is a script which updates dnsmasq configuration on on unifios devices with custom options which are not available in the GUI. It takes the values you provide in the `shared.conf` file inside the script's `patch` folder.
 
+<p align="center">
+  <img width="300" height="300" src="images/dnsuimasq.jpg">
+</p>
+
 ## Prerequisites
 
 While this script can be run standalone, the default installer relies on [on-boot script](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script) to keep it active after reboots and firmware updates. You should install on-boot script first if you want to be sure this script will not be disabled after reboots and firmware updates.
@@ -26,7 +30,7 @@ If you are using on-boot script then also add the `init-dnsmasq-update.sh` to th
 ln -sf "/data/dnsmasq/init-dnsmasq-update.sh" "/data/11-init-dnsmasq-updates.sh"
 ```
 
-## Usage
+## Setup
 
 In order to patch the dnsmasq configuration on your unifi router you need to provide a file in `/data/dnsmasq/patch/shared.conf`.
 
@@ -44,10 +48,3 @@ You can also provide additional files as long as they start with `shared` and en
 ```dnsmasq
 interface=tailscale*
 ```
-
-## Compatibility
-I have been using variations of this script since UDM 2.x days and I have kept the paths to the previous dnsmasq conf files for compatibility reasons
-This script has been thougly tested on UDM pro and SE consoles. If you install it on any other console open an issue for feedback and let me know which console you are runing it on.
-
-Happy days!
-
