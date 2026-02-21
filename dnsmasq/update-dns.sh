@@ -1,5 +1,4 @@
-#! /bin/bash
-DATA_DIR="/data"
+#!/bin/sh
 case "$(ubnt-device-info firmware || true)" in
 1*)
 	DATA_DIR="/mnt/data"
