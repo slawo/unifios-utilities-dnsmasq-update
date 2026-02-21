@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.2.1...v1.3.0) (2026-02-21)
+
+
+### ✨ New Features
+
+* add support for `/data` folder if it exists when the firmware version is not recognized ([6ff55e8](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/6ff55e8cc25b1b947f7dbeec01cea0943dd6dca1))
+* add support for unifi os 5 ([968d2b3](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/968d2b3bdf2241abb0fbdc86813b8a9fec4e2fe6))
+
+
+### 🐛 Bug Fixes
+
+* env and she bang ([89d4502](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/89d45021a815d16f893bdf274ae8847c9d6942e9))
+
 ## [1.2.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.2.0...v1.2.1) (2025-08-01)
 
 
