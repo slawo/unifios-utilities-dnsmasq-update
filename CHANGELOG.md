@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.3.0...v1.3.1) (2026-02-21)
+
+
+### 🐛 Bug Fixes
+
+* set shebangs to use bash ([4e1baef](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/4e1baef4cb007813884dc938edb2f40819a7afbe))
+
 ## [1.3.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.2.1...v1.3.0) (2026-02-21)
 
 
