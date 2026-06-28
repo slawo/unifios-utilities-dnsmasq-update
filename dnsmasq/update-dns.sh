@@ -114,7 +114,8 @@ if $NEED_UPDATE; then
 	#echo "output: $output"
 	echo -n "$output" > "$DNSMASQ_CONF_TO_PATCH"
 
-	service dnsmasq force-reload || kill $(ps -ef | awk '/dnsmas[q]/ {print $2}') || echo
+	dnsmasq_pids=$(ps -ef | awk '/dnsmas[q]/ {print $2}')
+	service dnsmasq force-reload || { [ -n "$dnsmasq_pids" ] && kill $dnsmasq_pids; } || echo
 else
 	echo "No update needed."
 fi
