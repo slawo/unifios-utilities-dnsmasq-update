@@ -32,22 +32,22 @@ for file in "${FILES[@]}"; do
 	fi
 done
 
-ONBOOOT_PATH="$DATA_DIR/on_boot.d"
+ONBOOT_PATH="$DATA_DIR/on_boot.d"
 #check if the onboot directory exists
-if [ -d "$ONBOOOT_PATH" ]; then
-	ln -sf "$DATA_DIR/dnsmasq/init-dnsmasq-update.sh" "$ONBOOOT_PATH/11-init-dnsmasq-updates.sh"
+if [ -d "$ONBOOT_PATH" ]; then
+	ln -sf "$DATA_DIR/dnsmasq/init-dnsmasq-update.sh" "$ONBOOT_PATH/11-init-dnsmasq-updates.sh"
 fi
 
 echo "Starting init"
 . $DATA_DIR/dnsmasq/init-dnsmasq-update.sh
 
-if [ ! -d "$ONBOOOT_PATH" ]; then
+if [ ! -d "$ONBOOT_PATH" ]; then
 	echo "You need to install the onboot script to ensure this script continues working after reboots."
 	echo "Please see https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script."
 	echo ""
 	echo "once installed you will need to add init-dnsmasq-update.sh to the onboot directory."
 	echo "You can do this by running the following command:"
-	echo "ln -sf $DATA_DIR/dnsmasq/init-dnsmasq-update.sh $ONBOOOT_PATH/11-init-dnsmasq-updates.sh"
+	echo "ln -sf $DATA_DIR/dnsmasq/init-dnsmasq-update.sh $ONBOOT_PATH/11-init-dnsmasq-updates.sh"
 	echo ""
 	echo "Alternatively, you can run the following command to install the init script:"
 	echo "curl -fsL \"https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/remote-install.sh\" | /bin/bash"
