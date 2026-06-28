@@ -28,7 +28,7 @@ FILES=(
 for file in "${FILES[@]}"; do
 	curl -fsSL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/$file" -o "$DATA_DIR/$file"
 	if [[ "$file" == *.sh ]]; then
-		chmod +x "/$DATA_DIR/$file"
+		chmod +x "$DATA_DIR/$file"
 	fi
 done
 
@@ -39,7 +39,7 @@ if [ -d "$ONBOOT_PATH" ]; then
 fi
 
 echo "Starting init"
-. $DATA_DIR/dnsmasq/init-dnsmasq-update.sh
+. "$DATA_DIR/dnsmasq/init-dnsmasq-update.sh"
 
 if [ ! -d "$ONBOOT_PATH" ]; then
 	echo "You need to install the onboot script to ensure this script continues working after reboots."
