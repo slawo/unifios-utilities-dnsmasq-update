@@ -26,5 +26,5 @@ if [ ! -f /etc/cron.d/dnsmasq ]; then
 EOF
 fi
 
-# Run the scrip for the first time
+# Run the script for the first time
 "$DATA_DIR/dnsmasq/update-dns.sh"

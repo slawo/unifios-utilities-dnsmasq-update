@@ -27,7 +27,7 @@ To install the script simply copy `init-dnsmasq-update.sh` and `update-dns.sh` t
 If you are using on-boot script then also add the `init-dnsmasq-update.sh` to the `on-boot.d` directory to ensure it will keep running despite reboots and firmware updates:
 
 ```bash
-ln -sf "/data/dnsmasq/init-dnsmasq-update.sh" "/data/11-init-dnsmasq-updates.sh"
+ln -sf "/data/dnsmasq/init-dnsmasq-update.sh" "/data/on_boot.d/11-init-dnsmasq-updates.sh"
 ```
 
 ## Setup

@@ -62,7 +62,6 @@ while IFS= read -r line; do
 done <<< "$filtered_patch"
 
 if grep -Fxq "#start_patched" "$DNSMASQ_CONF_TO_PATCH" && grep -Fxq "#end_patched" "$DNSMASQ_CONF_TO_PATCH"; then
-	echo `awk '/^#start_patched$/,/^#end_patched$/' "$DNSMASQ_CONF_TO_PATCH" `
 	between_block=$(awk '/^#start_patched$/,/^#end_patched$/' "$DNSMASQ_CONF_TO_PATCH" | grep -v '^#start_patched$' | grep -v '^#end_patched$')
 	# Check if any line in between_block is not in filtered_patch
 	# If so, we need to update to remove the lines that are not longer needed.
