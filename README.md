@@ -3,7 +3,7 @@
 This is a script which updates dnsmasq configuration on on unifios devices with custom options which are not available in the GUI. It takes the values you provide in the `shared.conf` file inside the script's `patch` folder.
 
 <p align="center">
-  <img width="300" height="300" src="images/dnsuimasq.jpg">
+  <img width="300" height="300" src="images/dnsuimasq.jpg?raw=true">
 </p>
 
 ## Prerequisites
