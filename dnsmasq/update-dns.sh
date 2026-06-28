@@ -29,6 +29,9 @@ elif [ -d /run/dnsmasq.conf.d ]; then
 	DNSMASQ_CONF_PATH="/run/dnsmasq.conf.d"
 	DNSMASQ_CONF_WAIT="$DNSMASQ_CONF_PATH/shared.conf"
 	DNSMASQ_CONF_TO_PATCH="$DNSMASQ_CONF_PATH/shared.custom.conf"
+else
+	echo "ERROR: No dnsmasq runtime config directory found." 1>&2
+	exit 1
 fi
 
 DNSMASQ_CONF_PATCH_FOLDER="$DATA_DIR/dnsmasq/patch"
