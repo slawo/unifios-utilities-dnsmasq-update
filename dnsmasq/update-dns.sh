@@ -45,16 +45,19 @@ done
 NEED_UPDATE=false
 
 filtered_patch=""
-for file in $DNSMASQ_CONF_PATCH_FOLDER/shared*.conf; do
+shopt -s nullglob
+for file in "$DNSMASQ_CONF_PATCH_FOLDER/shared*.conf"; do
 	[[ -f "$file" && -s "$file" ]] || continue
 	while IFS= read -r line; do
 		[[ -n "$line" ]] && filtered_patch+="$line"$'\n'
 	done < "$file"
 done
+shopt -u nullglob
 
 # Check if all non-empty lines in $DNSMASQ_CONF_PATCH_FILE exist in
 # $DNSMASQ_CONF_TO_PATCH
 while IFS= read -r line; do
+	[[ -z "$line" ]] && continue
 	! grep -Fxq "$line" "$DNSMASQ_CONF_TO_PATCH" && NEED_UPDATE=true
 done <<< "$filtered_patch"
 
