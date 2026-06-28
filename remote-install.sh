@@ -26,7 +26,7 @@ FILES=(
 )
 # download each file
 for file in "${FILES[@]}"; do
-	curl "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/$file" >"/$DATA_DIR/$file"
+	curl -fsSL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/$file" -o "$DATA_DIR/$file"
 	if [[ "$file" == *.sh ]]; then
 		chmod +x "/$DATA_DIR/$file"
 	fi
