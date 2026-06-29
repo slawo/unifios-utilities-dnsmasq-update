@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.4.0](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.3.1...v1.4.0) (2026-06-29)
+
+
+### ✨ New Features
+
+* explicitly errors on unknown dns config topology ([598db32](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/598db32e0b4b2a7bd9e6a4da8f5baef85d4a7d1e))
+* improve restart of dnsmasq, avoids kill when no pids present ([3f0019f](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/3f0019fbf7ee0ac6168890e4b48f5d04b9f35524))
+* install script requires --update flag to allow overwriting existing files ([8d65a05](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/8d65a052fa547d7c3419ec126d7721851009a821))
+
+
+### 🐛 Bug Fixes
+
+* empty script created on failed download ([211f8f8](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/211f8f8a3a584686c82e38d17ac5b4452ff61f11))
+* remove empty lines ([8d1108a](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/8d1108a1a54e9a601c266b78799834b95aec571a))
+* use bash for the install script ([2069b2f](https://github.com/slawo/unifios-utilities-dnsmasq-update/commit/2069b2f2ccb7e15e3f18fb513e249d043083ad18))
+
 ## [1.3.1](https://github.com/slawo/unifios-utilities-dnsmasq-update/compare/v1.3.0...v1.3.1) (2026-02-21)
 
 
