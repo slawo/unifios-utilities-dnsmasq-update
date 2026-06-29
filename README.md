@@ -20,6 +20,12 @@ I provide an install script for a convenient one line installation:
 curl -fsL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/remote-install.sh" | /bin/bash
 ```
 
+Running the installer again will stop with an error if the scripts are already installed. To upgrade the installed scripts, pass the `--update` flag:
+
+```bash
+curl -fsL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/remote-install.sh" | /bin/bash -s -- --update
+```
+
 ### Manual install
 
 To install the script simply copy `init-dnsmasq-update.sh` and `update-dns.sh` to your console's `/data/dnsmasq` folder and run `init-dnsmasq-update.sh`.

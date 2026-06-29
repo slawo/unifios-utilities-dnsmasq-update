@@ -16,14 +16,59 @@ case "$(ubnt-device-info firmware || true)" in
 	;;
 esac
 
+UPDATE=false
 
-mkdir -p "$DATA_DIR/dnsmasq"
-mkdir -p "$DATA_DIR/dnsmasq/patch"
+usage() {
+	echo "Usage: remote-install.sh [--update]"
+}
+
+while [ "$#" -gt 0 ]; do
+	case "$1" in
+	-u | --update)
+		UPDATE=true
+		;;
+	-h | --help)
+		usage
+		exit 0
+		;;
+	*)
+		echo "ERROR: Unknown option: $1" 1>&2
+		usage 1>&2
+		exit 1
+		;;
+	esac
+	shift
+done
+
 # array of files to download
 FILES=(
 	"dnsmasq/init-dnsmasq-update.sh"
 	"dnsmasq/update-dns.sh"
 )
+
+INSTALL_EXISTS=false
+for file in "${FILES[@]}"; do
+	if [ -e "$DATA_DIR/$file" ]; then
+		INSTALL_EXISTS=true
+		break
+	fi
+done
+
+if $INSTALL_EXISTS && ! $UPDATE; then
+	echo "ERROR: dnsmasq update scripts are already installed in $DATA_DIR/dnsmasq." 1>&2
+	echo "Run with --update to upgrade the existing installation." 1>&2
+	exit 1
+fi
+
+mkdir -p "$DATA_DIR/dnsmasq"
+mkdir -p "$DATA_DIR/dnsmasq/patch"
+
+if $UPDATE; then
+	echo "Updating dnsmasq update scripts in $DATA_DIR/dnsmasq."
+else
+	echo "Installing dnsmasq update scripts in $DATA_DIR/dnsmasq."
+fi
+
 # download each file
 for file in "${FILES[@]}"; do
 	curl -fsSL "https://raw.githubusercontent.com/slawo/unifios-utilities-dnsmasq-update/HEAD/$file" -o "$DATA_DIR/$file"
